@@ -2,10 +2,10 @@ package epsolutions.biz.dagger2example.car
 
 import android.util.Log
 import epsolutions.biz.dagger2example.annotation.EngineCapacity
+import epsolutions.biz.dagger2example.annotation.HorsePower
 import javax.inject.Inject
-import javax.inject.Named
 
-class PetrolEngine @Inject constructor(@Named("horse power") var horsePower: Int,
+class PetrolEngine @Inject constructor(@HorsePower("horse power") var horsePower: Int,
                                        @EngineCapacity("engine capacity") var engineCapacity: Int): Engine {
 
     override fun start() {

@@ -4,8 +4,8 @@ import dagger.BindsInstance
 import dagger.Component
 import epsolutions.biz.dagger2example.MainActivity
 import epsolutions.biz.dagger2example.annotation.EngineCapacity
+import epsolutions.biz.dagger2example.annotation.HorsePower
 import epsolutions.biz.dagger2example.car.Car
-import javax.inject.Named
 
 @Component(modules = [WheelsModule::class,
     PetrolEngineModule::class//,
@@ -20,7 +20,7 @@ interface CarComponent {
     interface Builder {
 
         @BindsInstance
-        fun horsePower(@Named("horse power") horsePower: Int): Builder
+        fun horsePower(@HorsePower("horse power") horsePower: Int): Builder
 
         @BindsInstance
         fun engineCapacity(@EngineCapacity("engine capacity") engineCapacity: Int): Builder
