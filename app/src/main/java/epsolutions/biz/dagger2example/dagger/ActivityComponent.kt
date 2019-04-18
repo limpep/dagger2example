@@ -6,14 +6,14 @@ import epsolutions.biz.dagger2example.MainActivity
 import epsolutions.biz.dagger2example.annotation.EngineCapacity
 import epsolutions.biz.dagger2example.annotation.HorsePower
 import epsolutions.biz.dagger2example.car.Car
-import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [WheelsModule::class,
+@PerActivity
+@Component(dependencies = [AppComponent::class],
+    modules =  [WheelsModule::class,
     PetrolEngineModule::class//,
 //    DieselEngineModule::class
 ])
-interface CarComponent {
+interface ActivityComponent {
     fun getCar(): Car
 
     fun inject(mainActivity: MainActivity)
@@ -27,7 +27,9 @@ interface CarComponent {
         @BindsInstance
         fun engineCapacity(@EngineCapacity("engine capacity") engineCapacity: Int): Builder
 
-        fun build(): CarComponent
+        fun appComponent(component: AppComponent) : Builder
+
+        fun build(): ActivityComponent
 
     }
 

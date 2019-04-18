@@ -1,9 +1,10 @@
 package epsolutions.biz.dagger2example.car
 
 import android.util.Log
+import epsolutions.biz.dagger2example.dagger.PerActivity
 import javax.inject.Inject
 
-
+@PerActivity
 class Car @Inject constructor(var driver: Driver,
                               var engine: Engine,
                               var wheels: Wheels) {
