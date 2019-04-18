@@ -6,7 +6,9 @@ import epsolutions.biz.dagger2example.MainActivity
 import epsolutions.biz.dagger2example.annotation.EngineCapacity
 import epsolutions.biz.dagger2example.annotation.HorsePower
 import epsolutions.biz.dagger2example.car.Car
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [WheelsModule::class,
     PetrolEngineModule::class//,
 //    DieselEngineModule::class

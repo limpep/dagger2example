@@ -4,7 +4,9 @@ import android.util.Log
 import javax.inject.Inject
 
 
-class Car @Inject constructor(var engine: Engine, var wheels: Wheels) {
+class Car @Inject constructor(var driver: Driver,
+                              var engine: Engine,
+                              var wheels: Wheels) {
 
     @Inject
     fun enableRemote(remote: Remote) {
@@ -13,6 +15,6 @@ class Car @Inject constructor(var engine: Engine, var wheels: Wheels) {
 
     fun drive() {
         engine.start()
-        Log.d("Car","driving... ")
+        Log.d("Car","$driver drives $this")
     }
 }
